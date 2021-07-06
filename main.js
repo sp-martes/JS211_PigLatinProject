@@ -10,43 +10,41 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const pigLatin = (word) => {
 
-  //trims word. variable w is assigned to trimmed word
-  let trimWord = (word) =>{
-    let trimmedWord = word.trim().toLowerCase();
-    return trimmedWord
-  }
-  let w = trimWord(word);
- 
-  // Finds index of first vowel in trimmed word. variable i is assigned to index 
-  let vowelIndex = (w) =>{
+const pigLatin = (word) => {
+  
+  let w = word.trim().toLowerCase();
+  
+  let vowelIndex = () =>{
     let vowels = w.match(/[aeiou]/);
     return w.indexOf(vowels);
   }
   let i= vowelIndex(w);
 
-  // Splits and switches positions of the word at the vowel and adds 'ay'. variable s is assigned to sliced word. 
-  function sliced(w) {
-    let s = w.slice(i) + w.slice(0,i) + 'ay'
-    return s
-  }
-  // let s = sliced(w);
-  
-  let pigWord = (i) => {
     if(i === 0) {
       return w += 'yay'
-      }
+    }
     else if(i === -1){
       return w += 'ay'
-      }
+    }
     else{
-      return sliced(w);
-      }
-    } 
-   
-   return pigWord(i);
-}
+      return w.slice(i) + w.slice(0,i) + 'ay'
+    }
+}  
+
+// const pigArray = (words) => {
+//   let inputArray = words.split(" ");
+//   console.log(inputArray.length);
+//   for(let i=0; i < inputArray.length; i++){
+//     let loop= inputArray[i];
+
+//        console.log( 'array length:', loop);
+//     return pigLatin(loop);
+//   }
+// }
+
+
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
