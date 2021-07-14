@@ -15,11 +15,9 @@ const pigLatin = (word) => {
   
   let w = word.trim().toLowerCase();
   
-  let vowelIndex = () =>{
-    let vowels = w.match(/[aeiou]/);
-    return w.indexOf(vowels);
-  }
-  let i= vowelIndex(w);
+  let vowel1 = w.match(/[aeiou]/);
+   
+  let i= w.indexOf(vowel1);
 
     if(i === 0) {
       return w += 'yay '
