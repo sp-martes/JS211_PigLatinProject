@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(167, 129, 134);
+}
+main{
+    font-family: 'Patua One', cursive;
+    padding: 0 20%;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+}
+img{
+    padding-top: 15px;
+}
+#translateBox{
+    font-family: 'Patua One', cursive;
+}
